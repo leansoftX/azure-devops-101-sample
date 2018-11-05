@@ -17,6 +17,6 @@ services:
       context: ./worker
       dockerfile: Dockerfile
   redis:
-    image: harbor-bj.devopshub.cn/docker-training/redis:alpine
+    image: azuredevops101.azurecr.cn/redis:alpine
   db:
-    image: harbor-bj.devopshub.cn/docker-training/postgres:9.4
+    image: azuredevops101.azurecr.cn/postgres:9.4
