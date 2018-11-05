@@ -1,0 +1,46 @@
+version: "3"
+
+services:
+  vote:
+    image: {acr-address}/vote:latest
+    ports:
+      - "5000:80"
+    networks:
+      - front-tier
+      - back-tier
+
+  result:
+    image: {acr-address}/result:latest
+    ports:
+      - "5001:80"
+      - "5858:5858"
+    networks:
+      - front-tier
+      - back-tier
+
+  worker:
+    image: {acr-address}/worker:latest
+    networks:
+      - back-tier
+
+  redis:
+    image: {acr-address}/redis:alpine
+    container_name: redis
+    ports: ["6379"]
+    networks:
+      - back-tier
+
+  db:
+    image: {acr-address}/postgres:9.4
+    container_name: db
+    volumes:
+      - "db-data:/var/lib/postgresql/data"
+    networks:
+      - back-tier
+
+volumes:
+  db-data:
+
+networks:
+  front-tier:
+  back-tier:
