@@ -8,6 +8,9 @@ RUN MAVEN_VERSION=3.3.3 \
 
 WORKDIR /code
 
+RUN rm -rf /usr/share/maven/conf/settings.xml
+ADD settings.xml /usr/share/maven/conf/settings.xml
+
 ADD pom.xml /code/pom.xml
 RUN ["mvn", "dependency:resolve"]
 RUN ["mvn", "verify"]
