@@ -18,7 +18,7 @@ spec:
         io.kompose.service: worker
     spec:
       containers:
-      - image: <acrname>.azurecr.io/linux/worker:latest
+      - image: azuredevops101.azurecr.cn/voting/worker:latest
         name: worker
       imagePullSecrets:
       - name: regcred

@@ -39,7 +39,7 @@ services:
             restart_policy:
                 condition: on-failure
     result:
-        image: azuredevops101.azurecr.cn/linux/result:latest
+        image: azuredevops101.azurecr.cn/voting/result:latest
         ports:
             - 5001:80
         networks:
@@ -55,7 +55,7 @@ services:
                 condition: on-failure
 
     worker:
-        image: azuredevops101.azurecr.cn/linux/worker:latest
+        image: azuredevops101.azurecr.cn/voting/worker:latest
         networks:
             - frontend
             - backend

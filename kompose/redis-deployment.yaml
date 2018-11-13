@@ -18,10 +18,12 @@ spec:
         io.kompose.service: redis
     spec:
       containers:
-      - image: harbor-bj.devopshub.cn/docker-training/redis:alpine
+      - image: azuredevops101.azurecr.cn/redis:alpine
         name: redis
         ports:
         - containerPort: 6379
         resources: {}
+      imagePullSecrets:
+      - name: regcred
       restartPolicy: Always
 status: {}
