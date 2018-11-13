@@ -47,6 +47,14 @@ cd kompose
 kubectl apply -f ./
 ```
 
+It will take some time for kubernetes to pull down image, run the container and setup load balancer in Azure. You can run the following command to watch for the services status until the EXTERNAL-IP is shown up.
+
+```shell
+kubectl get services --watch
+```
+
+Once the EXTERNAL-IP is showing up, you can copy them into your browser and open the vote and result pages.
+
 ## Note
 
 The voting application only accepts one vote per client. It does not register votes if a vote has already been submitted from a client.
