@@ -40,7 +40,7 @@ Note: if you are attending leansoftX.com hosted training sessions, <acr-passowrd
 
 ```shell
 # create a secret according to your Azure Container Registry settings
-kubectl create secret docker-registry regcred --docker-server=azuredevops101.azurecr.cn --docker-username=azuredevops101 --docker-password=<acr-password> --docker-email=info@leansoftX.com
+kubectl create secret docker-registry regcred --docker-server=azuredevops101.azurecr.cn --docker-username=azuredevops101 --docker-password=XRAH2SQ9l+Cn8Yj8cmNSo=vnEN7jEe8B --docker-email=info@leansoftX.com
 
 # run kubectl to deploy
 cd kompose
